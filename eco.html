@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Eco-Tourism - Jharkhand Tourism</title><link rel='stylesheet' href='css/style.css'></head><body><div class='navbar container'><div class='logo'>🌿 Jharkhand Tourism</div><div class='nav-links'><a href='index.html'>Home</a><a href='destinations.html'>Destinations</a><a href='culture.html'>Culture</a><a href='eco.html'>Eco-Tourism</a><a href='artisans.html'>Artisans</a><a href='contact.html'>Contact</a><a href='admin.html'>Admin</a></div></div>
+<main class='container'><section><h2>Eco-Tourism & Adventures</h2><p class='lead'>Responsible treks, birdwatching and community safaris. Use local guides and follow leave-no-trace principles.</p>
+<div class='grid' style='margin-top:12px'><div class='card'><img src='images/netarhat.svg'><div class='card-body'><h3>Chotanagpur Trails</h3><p>Plateau treks with community-guided routes.</p></div></div><div class='card'><img src='images/betla.svg'><div class='card-body'><h3>Sanctuary Safaris</h3><p>Learn about conservation programs and local livelihoods.</p></div></div><div class='card'><img src='images/hundru.svg'><div class='card-body'><h3>Waterfall Trails</h3><p>Explore hidden cascades safely with a guide.</p></div></div></div>
+<section style='margin-top:18px'><h3>Interactive Map</h3><p class='lead'>Map loads tiles when online; markers show sample POIs.</p><div id='map' style='height:420px;border-radius:10px;box-shadow:var(--card-shadow)'></div></section></main>
+<script src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'></script>
+<script>
+const map=L.map('map').setView([23.5,85.3],7);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19}).addTo(map);
+const pois=[{name:'Netarhat',coords:[23.4633,84.8399]},{name:'Betla',coords:[23.8,84.2]},{name:'Hundru',coords:[23.4026,85.3019]},{name:'Patratu',coords:[23.62,85.16]}];
+pois.forEach(p=>L.marker(p.coords).addTo(map).bindPopup('<strong>'+p.name+'</strong>'));
+</script>
+<div class='footer'><div class='container'><div class='cols'><div><h3>Jharkhand Tourism</h3><p>Community-led, sustainable travel.</p></div><div><h4>Links</h4><p>Destinations · Artisans · Eco-Tours</p></div><div><h4>Contact</h4><p>tourism@jharkhand.gov.in</p></div></div></div></div><div id='lightbox' class='lightbox' onclick='closeLightbox()'><img id='lightbox-img'/></div><script src='js/lightbox.js'></script></body></html>

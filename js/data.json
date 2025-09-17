@@ -1,0 +1,136 @@
+{
+  "destinations": [
+    {
+      "id": "netarhat",
+      "name": "Netarhat",
+      "type": "Hill Station",
+      "best_time": "Oct-Feb",
+      "summary": "Queen of Chotanagpur with sunrise viewpoints",
+      "details": "Netarhat offers plateaus, quiet trails, viewpoints and is famous for sunrise. Accommodation: basic guesthouses and a few homestays.",
+      "image": "images/netarhat.svg",
+      "itinerary": [
+        "Sunrise at Magnolia Point",
+        "Short trek to nearby viewpoints",
+        "Local village visit"
+      ],
+      "how_to_reach": "Nearest railhead: Latehar (approx 55 km) or Ranchi (approx 160 km). Road access via Ranchi-Latehar route. Best by private car or bus.",
+      "nearest_airport": "Ranchi Airport (Ranchi Airport, approx 160 km)",
+      "nearest_railway": "Latehar Railway Station (approx 55 km)",
+      "entry_fee": "No formal entry fee for Netarhat plateau; some viewpoints may charge nominal parking fees.",
+      "permits": "No permits required for general areas; follow local guidelines for protected zones.",
+      "coordinates": [
+        23.4633,
+        84.8399
+      ],
+      "tips": [
+        "Carry warm clothes for early morning",
+        "Hire local guide for offbeat trails",
+        "Respect local customs and private lands"
+      ]
+    },
+    {
+      "id": "hundru",
+      "name": "Hundru Falls",
+      "type": "Waterfall",
+      "best_time": "Post-monsoon",
+      "summary": "Dramatic waterfall on Subarnarekha river",
+      "details": "Hundru Falls is a powerful cascade. Take care during monsoon. Local guides provide short treks.",
+      "image": "images/hundru.svg",
+      "itinerary": [
+        "Viewpoint visit",
+        "Picnic near fall",
+        "Guided short trek"
+      ],
+      "how_to_reach": "Approximately 45 km from Ranchi city by road. Taxis and local buses available.",
+      "nearest_airport": "Ranchi Airport (approx 50 km)",
+      "nearest_railway": "Ranchi Junction (approx 45 km)",
+      "entry_fee": "No formal fee; be cautious of unsafe edges after monsoon.",
+      "permits": "No permits required.",
+      "coordinates": [
+        23.4026,
+        85.3019
+      ],
+      "tips": [
+        "Avoid slippery rocks during monsoon",
+        "Carry water and sun protection",
+        "Follow local safety signage"
+      ]
+    },
+    {
+      "id": "betla",
+      "name": "Betla National Park",
+      "type": "Wildlife",
+      "best_time": "Oct-Mar",
+      "summary": "Protected area with safaris and birdlife",
+      "details": "Betla NP has community-managed eco trails, safaris and offers opportunities for birdwatching.",
+      "image": "images/betla.svg",
+      "itinerary": [
+        "Early morning safari",
+        "Village eco-trail",
+        "Birdwatching session"
+      ],
+      "how_to_reach": "Betla is in Latehar district; nearest railhead Daltonganj (approx 25 km). Road connections available from Ranchi and Daltonganj.",
+      "nearest_airport": "Ranchi Airport (approx 170 km)",
+      "nearest_railway": "Daltonganj (approx 25 km)",
+      "entry_fee": "Forest department manages park entry; fees vary (approx ₹50-₹200).",
+      "permits": "Safari permits required; book via forest department or local operators.",
+      "coordinates": [
+        23.8,
+        84.2
+      ],
+      "tips": [
+        "Book safaris in advance during peak season",
+        "Carry binoculars for birdwatching",
+        "Respect wildlife and follow guide instructions"
+      ]
+    },
+    {
+      "id": "patratu",
+      "name": "Patratu Valley",
+      "type": "Scenic",
+      "best_time": "Year-round",
+      "summary": "Valley and reservoir views good for road trips",
+      "details": "Patratu is known for reservoir views, sunset points and easy access by road.",
+      "image": "images/patratu.svg",
+      "itinerary": [
+        "Drive along reservoir",
+        "Sunset viewpoint",
+        "Local cafe stop"
+      ],
+      "how_to_reach": "Accessible via road from Ranchi and Ramgarh. Good for short trips from Ranchi.",
+      "nearest_airport": "Ranchi Airport (approx 35-60 km depending on route)",
+      "nearest_railway": "Ramgarh Cantonment / Barkakana stations",
+      "entry_fee": "No formal fee",
+      "permits": "No permits required",
+      "coordinates": [
+        23.62,
+        85.16
+      ],
+      "tips": [
+        "Best at sunset",
+        "Ideal for road trips and photography",
+        "Check local weather before planning"
+      ]
+    }
+  ],
+  "festivals": [
+    {
+      "name": "Sarhul",
+      "month": "March-April",
+      "description": "Main tribal festival worshipping the Sal tree; marks the start of the new year for many tribes. Community celebrations, dances and rituals.",
+      "source": "Government of Jharkhand"
+    },
+    {
+      "name": "Karam",
+      "month": "August-September",
+      "description": "Harvest festival celebrated widely in Jharkhand with dance, songs and community feasts.",
+      "source": "Wikipedia/News reports"
+    },
+    {
+      "name": "Makar Sankranti & Pausal Mela (Deoghar)",
+      "month": "January",
+      "description": "Religious fairs and pilgrim activities at Baidyanath Dham, Deoghar.",
+      "source": "Jharkhand Tourism"
+    }
+  ]
+}

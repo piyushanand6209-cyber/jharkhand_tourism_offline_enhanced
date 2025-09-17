@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Panel - Jharkhand Tourism</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin">
+  <div class="admin-header">🌿 Jharkhand Tourism - Admin Panel</div>
+
+  <div class="admin-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h3>Dashboard</h3>
+      <a href="#destinations">📍 Manage Destinations</a>
+      <a href="#add-place">➕ Add New Place</a>
+      <a href="#artisans">🎨 Manage Artisans</a>
+      <a href="#feedback">💬 User Feedback</a>
+      <a href="index.html">← Back to Website</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="admin-content">
+
+      <!-- Manage Destinations -->
+      <div class="card" id="destinations">
+        <h4>📍 Manage Destinations</h4>
+        <table border="0" width="100%" cellpadding="8" id="destinationsTable">
+          <tr style="background:#eee;">
+            <th>Destination</th>
+            <th>Location</th>
+            <th>Action</th>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Add New Place -->
+      <div class="card" id="add-place">
+        <h4>➕ Add New Place</h4>
+        <form id="addPlaceForm">
+          <label>Place Name:</label><br>
+          <input type="text" id="placeName" placeholder="Enter place name" required><br><br>
+
+          <label>Location:</label><br>
+          <input type="text" id="placeLocation" placeholder="Enter location" required><br><br>
+
+          <label>Description:</label><br>
+          <textarea id="placeDesc" rows="4" placeholder="Enter description" required></textarea><br><br>
+
+          <label>Upload Image:</label><br>
+          <input type="file" id="placeImage" accept="image/*"><br><br>
+
+          <button type="submit" class="btn">Add Place</button>
+        </form>
+      </div>
+
+      <!-- Manage Artisans -->
+      <div class="card" id="artisans">
+        <h4>🎨 Manage Artisans</h4>
+        <form id="artisanForm">
+          <label>Artisan Name:</label><br>
+          <input type="text" id="artisanName" placeholder="Enter artisan name" required><br><br>
+
+          <label>Craft Type:</label><br>
+          <input type="text" id="artisanCraft" placeholder="Woodwork, Painting, etc." required><br><br>
+
+          <label>Details:</label><br>
+          <textarea id="artisanDetails" rows="3" placeholder="Enter artisan details"></textarea><br><br>
+
+          <button type="submit" class="btn">Save Artisan</button>
+        </form>
+
+        <table border="0" width="100%" cellpadding="8" id="artisanTable">
+          <tr style="background:#eee;">
+            <th>Name</th>
+            <th>Craft</th>
+            <th>Action</th>
+          </tr>
+        </table>
+      </div>
+
+      <!-- User Feedback -->
+      <div class="card" id="feedback">
+        <h4>💬 User Feedback</h4>
+        <table border="0" width="100%" cellpadding="8" id="feedbackTable">
+          <tr style="background:#eee;">
+            <th>User</th>
+            <th>Feedback</th>
+            <th>Date</th>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    let destinations = JSON.parse(localStorage.getItem("destinations")) || [
+      { name: "Netarhat", location: "Latehar" },
+      { name: "Hundru Falls", location: "Ranchi" }
+    ];
+
+    let artisans = JSON.parse(localStorage.getItem("artisans")) || [
+      { name: "Ramesh", craft: "Woodwork" }
+    ];
+
+    let feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [
+      { user: "Ravi Kumar", text: "Loved Netarhat sunset point 🌄", date: "12-Sep-2025" },
+      { user: "Anita Sharma", text: "Hundru Falls was amazing, very scenic!", date: "15-Sep-2025" }
+    ];
+
+    function renderDestinations() {
+      const table = document.getElementById("destinationsTable");
+      table.innerHTML = \`
+        <tr style="background:#eee;">
+          <th>Destination</th>
+          <th>Location</th>
+          <th>Action</th>
+        </tr>\`;
+      destinations.forEach((d, i) => {
+        table.innerHTML += \`
+          <tr>
+            <td>\${d.name}</td>
+            <td>\${d.location}</td>
+            <td><a href="#" class="btn" onclick="deleteDestination(\${i})">Delete</a></td>
+          </tr>\`;
+      });
+    }
+
+    function renderArtisans() {
+      const table = document.getElementById("artisanTable");
+      table.innerHTML = \`
+        <tr style="background:#eee;">
+          <th>Name</th>
+          <th>Craft</th>
+          <th>Action</th>
+        </tr>\`;
+      artisans.forEach((a, i) => {
+        table.innerHTML += \`
+          <tr>
+            <td>\${a.name}</td>
+            <td>\${a.craft}</td>
+            <td><a href="#" class="btn" onclick="deleteArtisan(\${i})">Delete</a></td>
+          </tr>\`;
+      });
+    }
+
+    function renderFeedback() {
+      const table = document.getElementById("feedbackTable");
+      table.innerHTML = \`
+        <tr style="background:#eee;">
+          <th>User</th>
+          <th>Feedback</th>
+          <th>Date</th>
+        </tr>\`;
+      feedbacks.forEach(f => {
+        table.innerHTML += \`
+          <tr>
+            <td>\${f.user}</td>
+            <td>\${f.text}</td>
+            <td>\${f.date}</td>
+          </tr>\`;
+      });
+    }
+
+    document.getElementById("addPlaceForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const name = document.getElementById("placeName").value;
+      const location = document.getElementById("placeLocation").value;
+      destinations.push({ name, location });
+      localStorage.setItem("destinations", JSON.stringify(destinations));
+      renderDestinations();
+      e.target.reset();
+    });
+
+    document.getElementById("artisanForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const name = document.getElementById("artisanName").value;
+      const craft = document.getElementById("artisanCraft").value;
+      artisans.push({ name, craft });
+      localStorage.setItem("artisans", JSON.stringify(artisans));
+      renderArtisans();
+      e.target.reset();
+    });
+
+    function deleteDestination(index) {
+      destinations.splice(index, 1);
+      localStorage.setItem("destinations", JSON.stringify(destinations));
+      renderDestinations();
+    }
+
+    function deleteArtisan(index) {
+      artisans.splice(index, 1);
+      localStorage.setItem("artisans", JSON.stringify(artisans));
+      renderArtisans();
+    }
+
+    renderDestinations();
+    renderArtisans();
+    renderFeedback();
+  </script>
+</body>
+</html>
